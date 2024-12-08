@@ -11,31 +11,18 @@ import { PlayerContext } from "../../contexts/Player";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { CheckPlayer } from "../../components/Http/CheckPlayer";
 import { SendStatus } from "../../components/Http/SendStatus";
+import { Exercise02 } from "../../Problem/Problem1";
+
 export const Matching = () => {
-  const { code, setCode } = useContext(CodeContext);
+  const { code } = useContext(CodeContext);
   const { roomId } = useContext(RoomIdContext);
   const { player } = useContext(PlayerContext);
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const [isPlayer, setIsPlayer] = useState(false);
   const sendStatus = "read";
-
-  // ファイルからコードを取得してコードエディタ上に表示させる
-  useEffect(() => {
-    fetch("/exercise01.c")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("ファイルの読み込みに失敗しました");
-        }
-        return response.text();
-      })
-      .then((text) => {
-        setCode(text);
-      })
-      .catch((error) => {
-        console.error("エラー:", error);
-      });
-  }, []);
+  const input = 10;
+  Exercise02({ input });
 
   useEffect(() => {
     if (isFinish) {
