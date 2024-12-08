@@ -66,6 +66,10 @@
   letter-spacing: 7px;
 }
 
+.textArea > p {
+  font-family: "Orbitron", Courier, monospace;
+}
+
 .dot2 {
   position: absolute;
   animation: bound 1s infinite step-start;
