@@ -21,8 +21,8 @@ export const Matching = () => {
   const [isFinish, setIsFinish] = useState(false);
   const [isPlayer, setIsPlayer] = useState(false);
   const sendStatus = "read";
-  const input = 10;
-  Exercise02({ input });
+  const inputNum = 10;
+  Exercise02({ inputNum });
 
   useEffect(() => {
     if (isFinish) {

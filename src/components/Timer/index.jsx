@@ -6,11 +6,11 @@ import { CodeContext } from "../../contexts/CodeContext";
 export const Timer = ({ setIsFinish, phase }) => {
   let initialTime = 6000;
   if (phase === "read") {
-    initialTime = 180;
+    initialTime = 15;
   } else if (phase === "delete") {
-    initialTime = 180;
+    initialTime = 15;
   } else if (phase === "fix") {
-    initialTime = 300;
+    initialTime = 20;
   }
 
   const { roomId } = useContext(CodeContext);
